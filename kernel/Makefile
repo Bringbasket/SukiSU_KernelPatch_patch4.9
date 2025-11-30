@@ -1,17 +1,17 @@
 ifndef TARGET_COMPILE
-    TARGET_COMPILE=/root/other/ndk/android-ndk-r29/toolchains/llvm/prebuilt/linux-x86_64/bin
+    TARGET_COMPILE=/home/xd/main/external/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin
 endif
 
 TARGET=kpimg
 
-CC = $(TARGET_COMPILE)/aarch64-linux-android35-clang
+CC = $(TARGET_COMPILE)/aarch64-linux-android33-clang
 LD = $(TARGET_COMPILE)/ld.lld
 AS = $(TARGET_COMPILE)/llvm-as
 OBJCOPY = $(TARGET_COMPILE)/llvm-objcopy
 
 CFLAGS += -Wall -fno-builtin -std=gnu11 -nostdinc -mgeneral-regs-only
 CFLAGS += -g
-CFLAGS += -Wno-unused-function -Wno-return-type -Wno-c23-extensions -Wno-uninitialized
+CFLAGS += -Wno-unused-function -Wno-return-type -Wno-c2x-extensions -Wno-uninitialized
 CFLAGS += -fno-PIC -fno-asynchronous-unwind-tables -fno-stack-protector -fno-unwind-tables -fno-semantic-interposition -U_FORTIFY_SOURCE -fno-common
 
 ifdef DEBUG
